@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/sayukata/.anyenv/envs/nodenv/versions/12.7.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add trpescript
+
+PATH: 
+  /Users/sayukata/.anyenv/envs/nodenv/versions/12.7.0/bin:/Users/sayukata/.anyenv/envs/nodenv/libexec:/Users/sayukata/.anyenv/envs/nodenv/plugins/nodenv-vars/bin:/Users/sayukata/.anyenv/envs/nodenv/plugins/nodenv-default-packages/bin:/Users/sayukata/.anyenv/envs/nodenv/plugins/node-build/bin:/Users/sayukata/.anyenv/envs/nodenv/shims:/Users/sayukata/.anyenv/envs/nodenv/bin:/Users/sayukata/.anyenv/envs/nodenv/shims:/Users/sayukata/.anyenv/envs/nodenv/bin:/Users/sayukata/.anyenv/envs/nodenv/shims:/Users/sayukata/.anyenv/envs/nodenv/bin:/Users/sayukata/.anyenv/envs/nodenv/shims:/Users/sayukata/.anyenv/envs/nodenv/bin:/Users/sayukata/.anyenv/envs/nodenv/shims:/Users/sayukata/.anyenv/envs/nodenv/bin:/usr/local/bin:/Users/sayukata/.nodebrew/current/bin:/usr/local/Cellar/git/2.26.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.7.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/trpescript: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
+      at Request.emit (events.js:203:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141720:10)
+      at Request.emit (events.js:203:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:291:20)
+      at IncomingMessage.emit (events.js:208:15)
+      at endReadableNT (_stream_readable.js:1161:12)
+      at processTicksAndRejections (internal/process/task_queues.js:77:11)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
