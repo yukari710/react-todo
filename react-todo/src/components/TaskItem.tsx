@@ -34,10 +34,37 @@ const Li = styled.li`
     display: flex;
     align-items: center;
     position: relative;
+    &.done span {
+        text-decoration: line-through;
+    }
+    &:hover button {
+        display: block;
+    }
+`;
+
+const Label = styled.label`
+    width: calc(100% - 100px);
+    display: block;
+    cursor: pointer;
 `;
 
 const CheckboxInput = styled.input`
     display: none;
+    &:checked + span {
+        color: #999;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 5px;
+            width: 7px;
+            height: 14px;
+            transform: rotate(40deg);
+            border-bottom: 3px solid #d01137;
+            border-right: 3px solid #d01137;
+        }
+    }
 `;
 
 const CheckboxLabel = styled.span`
