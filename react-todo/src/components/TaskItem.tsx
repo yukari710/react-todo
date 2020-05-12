@@ -12,14 +12,14 @@ const TaskItem: React.FC<Props> =({ task, handleDone, handleDelete }) => {
 
     return (
         <Li className={task.done ? 'done' : ''}>
-            <label>
+            <Label>
                 <CheckboxInput
                     type="checkbox"
                     onClick={() => handleDone(task)}
                     defaultChecked={task.done}
                 />
                 <CheckboxLabel>{ task.title }</CheckboxLabel>
-            </label>
+            </Label>
             <DeleteButton
                 onClick={ () => handleDelete(task) }
             >削除</DeleteButton>
@@ -37,7 +37,7 @@ const Li = styled.li`
     &.done span {
         text-decoration: line-through;
     }
-    &:hover button {
+    &.done button {
         display: block;
     }
 `;
@@ -85,11 +85,13 @@ const CheckboxLabel = styled.span`
 `;
 
 const Button = styled.button`
-    font-size: 15px;
-    cursor: pointer ;
-    font-weight: bold;
-    display: inline-block;
-    padding: 10px 15px;
+    display: none;
+    width: 80px;
+    position: absolute;
+    right: 10px; 
+    padding: 0.4em 1em;
+    font-size: 13px;
+    z-index: 10;
     text-decoration: none;
     background: #668ad8;
     color: #FFF;
