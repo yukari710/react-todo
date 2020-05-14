@@ -1,46 +1,34 @@
 import React, { useState } from 'react'
-import { Task } from './Types'
+import { useDispatch } from 'react-redux'
+import { addTask } from '../modules/tasksModule'
 import styled from 'styled-components';
 
-type Props = {
-    setTasks: React.Dispatch<React.SetStateAction<Task[]>>
-    tasks: Task[]
-}
+const TaskInput: React.FC = () => {
+    const dispatch = useDispatch()
 
-const TaskInput: React.FC<Props> = ({ setTasks, tasks }) => {
-    const [ inputTitle, setInputTitle ] = useState<string>('')
-    const [ count, setCount ] = useState<number>(tasks.length + 1)
+    const [ inputTitle, setInputTitle ] = useState('')
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputTitle(e.target.value)
     }
 
     const handleSubmit = () => {
-        setCount(count + 1)
-
-        const newTask: Task = {
-            id: count,
-            title: inputTitle,
-            done: false
-        }
-
-        setTasks([newTask, ...tasks])
+        dispatch(addTask(inputTitle))
         setInputTitle('')
     }
 
     return (
-        <>
-            <InputForm>
-                <Inner>
-                    <Input
-                        type="text"
-                        value={inputTitle}
-                        onChange={handleInputChange}
-                    />
-                    <Button onClick={handleSubmit}>追加</Button>
-                </Inner>
-            </InputForm>
-        </>
+        <InputForm>
+            <Inner>
+                <Input
+                    type="text"
+                    value={inputTitle}
+                    onChange={handleInputChange}
+                    placeholder="TODOを入力してください。"
+                />
+                <Button onClick={handleSubmit}>追加</Button>
+            </Inner>
+        </InputForm>
     )
 }
 
