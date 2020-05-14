@@ -1,27 +1,28 @@
 import React from 'react'
 import { Task } from './Types'
+import { useDispatch } from 'react-redux'
+import { doneTask, deleteTask } from '../modules/tasksModule'
 import styled from 'styled-components';
 
 type Props = {
     task: Task
-    handleDone: (task: Task) => void
-    handleDelete: (task: Task) => void
 }
 
-const TaskItem: React.FC<Props> =({ task, handleDone, handleDelete }) => {
+const TaskItem: React.FC<Props> =({ task }) => {
+    const dispatch = useDispatch()
 
     return (
         <Li className={task.done ? 'done' : ''}>
             <Label>
                 <CheckboxInput
                     type="checkbox"
-                    onClick={() => handleDone(task)}
+                    onClick={() => dispatch(doneTask(task))}
                     defaultChecked={task.done}
                 />
                 <CheckboxLabel>{ task.title }</CheckboxLabel>
             </Label>
             <DeleteButton
-                onClick={ () => handleDelete(task) }
+                onClick={ () => dispatch(deleteTask(task)) }
             >削除</DeleteButton>
         </Li>
     )
